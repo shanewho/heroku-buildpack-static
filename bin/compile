@@ -47,6 +47,8 @@ fi
 # update config files
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 
+cp $LP_DIR/extensions/mod_deflate.so $APACHE_PATH/conf
+
 cat >>boot.sh <<EOF
 sed -i 's/Listen 80/Listen '\$PORT'/' /app/apache/conf/httpd.conf
 for var in \`env|cut -f1 -d=\`; do
